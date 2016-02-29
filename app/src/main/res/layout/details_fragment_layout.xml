@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/details_fragment_margin"
+    android:paddingRight="@dimen/details_fragment_margin"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+    <include
+        android:id="@+id/title"
+        layout="@layout/title_layout"/>
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:lines="2"
+        android:layout_gravity="center" />
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/user_avatar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        fresco:viewAspectRatio="1.33"
+        fresco:fadeDuration="300"
+        fresco:placeholderImage="@color/default_image"
+        fresco:failureImage="@color/default_image"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:roundAsCircle="true"
+        fresco:roundedCornerRadius="4dp"/>
+
+    <TextView
+        android:id="@+id/post_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/black"
+        android:lines="1"
+        android:ellipsize="end"
+        android:textAllCaps="true" />
+    <TextView
+        android:id="@+id/post_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/black"
+        android:layout_marginLeft="@dimen/details_fragment_margin"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="@dimen/details_fragment_margin"
+        android:layout_marginRight="@dimen/details_fragment_margin"/>
+    <TextView
+        android:id="@+id/comments_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:layout_gravity="right"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>

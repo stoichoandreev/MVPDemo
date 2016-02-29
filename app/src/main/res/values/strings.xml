@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Babylon</string>
+    <string name="post_screen_title">User Posts</string>
+    <string name="details_screen_title">Post Details</string>
+    <string name="user_details_screen_title">User Details</string>
+    <string name="comments_number">%1$s comments</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="generic_error_message">Sorry this app has a problem. Please try again later.</string>
+    <string name="no_post_content">You are not able to see posts. Check your internet connection</string>
+</resources>

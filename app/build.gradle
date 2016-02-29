@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "babylon.sniper.com.babylon"
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        debug {
+            //            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-project.txt'), 'proguard-rules.pro'
+            buildConfigField 'okhttp3.logging.HttpLoggingInterceptor.Level', 'RETROFIT_LOG_LEVEL', 'okhttp3.logging.HttpLoggingInterceptor.Level.BASIC'
+        }
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'okhttp3.logging.HttpLoggingInterceptor.Level', 'RETROFIT_LOG_LEVEL', 'okhttp3.logging.HttpLoggingInterceptor.Level.NONE'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor' // butterknife
+    }
+    sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/anim'] } }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    retrolambda {
+        oldJdk JAVA7_HOME
+        jdk JAVA8_HOME
+    }
+    repositories {
+        maven {
+            url 'https://github.com/uPhyca/stetho-realm/raw/master/maven-repo'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.2.0'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    // Java Reactive Extensions
+    compile 'io.reactivex:rxjava:1.0.14'
+    compile 'io.reactivex:rxandroid:1.0.1'
+    // Retrofit as http client
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
+    // Stetho for debugging. We need to hide this in release
+    compile 'com.facebook.stetho:stetho:1.3.0'
+    compile 'com.uphyca:stetho_realm:0.8.0'
+    //    debugCompile 'com.facebook.stetho:stetho:1.3.0'
+    //    debugCompile 'com.uphyca:stetho_realm:0.8.0'
+    // We use Optional type from this library
+    compile 'com.fernandocejas:arrow:1.0.0'
+    // Realm for persistence
+    compile 'io.realm:realm-android:0.87.4'
+    // Butter Knife for view injection
+    compile 'com.jakewharton:butterknife:7.0.1'
+    // Fresco for image loading and caching
+    compile 'com.facebook.fresco:fresco:0.9.0'
+    //For Google Map
+    compile 'com.google.android.gms:play-services-maps:8.4.0'
+}

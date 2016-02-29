@@ -1,0 +1,9 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="details_fragment_margin">10dp</dimen>
+    <!--Other dimens-->
+    <dimen name="fragment_in_horizontal_transition_start_position">1280dp</dimen>
+    <dimen name="fragment_out_horizontal_transition_end_position">-1280dp</dimen>
+</resources>
