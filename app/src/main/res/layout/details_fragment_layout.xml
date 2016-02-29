@@ -53,7 +53,6 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@android:color/black"
-        android:layout_marginLeft="@dimen/details_fragment_margin"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="@dimen/details_fragment_margin"
         android:layout_marginRight="@dimen/details_fragment_margin"/>
